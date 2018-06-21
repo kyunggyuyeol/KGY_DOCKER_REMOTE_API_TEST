@@ -44,6 +44,7 @@ namespace dockerdotnetTest
 
 
             //docker image 를 docker hub에서 다운로드함.
+            //임시로 내 테스트 업로드용 업데이트
             var report = new Progress<JSONMessage>(msg =>
             {
                 Console.WriteLine($"{msg.Status}|{msg.ProgressMessage}|{msg.ErrorMessage}");
