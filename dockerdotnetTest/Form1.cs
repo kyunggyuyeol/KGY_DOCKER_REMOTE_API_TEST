@@ -45,7 +45,17 @@ namespace dockerdotnetTest
             IList<ImagesListResponse> images = await client.Images.ListImagesAsync(new ImagesListParameters(), CancellationToken.None);
             var aa = images[0].Labels.TryGetValue("org.label-schema.schema-version", out string outstring);
 
+            string continerid = "";
 
+
+            ContainerStartParameters param = new ContainerStartParameters();
+            
+
+            await client.Containers.StartContainerAsync(continerid, param, CancellationToken.None);
+
+
+
+            //컨테이너 종료
             //컨테이터 아이디 불러옴
             string stopcontiner = containers[0].ID;
             var stopped = await client.Containers.StopContainerAsync(stopcontiner, new ContainerStopParameters()
